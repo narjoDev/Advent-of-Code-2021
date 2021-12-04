@@ -14,7 +14,7 @@ How many measurements are larger than the previous measurement?
 
 const fs = require("fs");
 
-const INPUT_FILE = "01-input.txt";
+const INPUT_FILE = "input.txt";
 
 function readTextFile(fileName, encoding = "utf8") {
   try {
