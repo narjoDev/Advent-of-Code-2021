@@ -15,7 +15,6 @@ How many measurements are larger than the previous measurement?
 const fs = require("fs");
 
 const INPUT_FILE = "01-input.txt";
-// const INPUT_FILE = "test-text-file.txt";
 
 function readTextFile(fileName, encoding = "utf8") {
   try {
@@ -59,7 +58,6 @@ function countIncreasesInArray(array) {
  * @returns {Array<Number>} Array with truthy (and 0) elements converted to numbers
  */
 function convertArrayToNumbers(array) {
-  console.log(array);
   const result = array.reduce((newArray, currentValue) => {
     if (currentValue || currentValue === 0) {
       const converted = Number(currentValue);
@@ -67,7 +65,6 @@ function convertArrayToNumbers(array) {
     }
     return newArray;
   }, []);
-  console.log(result);
   return result;
 }
 
