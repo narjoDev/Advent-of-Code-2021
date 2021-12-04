@@ -69,3 +69,23 @@ function convertArrayToNumbers(array) {
 }
 
 console.log(countIncreasesInArray(importPuzzleInput(INPUT_FILE)));
+console.log(countIncreasesInArray(importPuzzleInput("test-from-prompt.txt")));
+
+// Consider sums of a three-measurement sliding window.
+// How many sums are larger than the previous sum?
+
+// TODO: test this more
+// TODO: specify in docstring behavior if window size is omitted
+function countWindowIncrease(array, windowSize) {
+  let increases = 0;
+  let previous = Array(windowSize);
+  for (let i = 0; i < array.length; i++) {
+    const thisElement = array[i];
+    if (thisElement > previous.shift()) increases++;
+    previous.push(thisElement);
+  }
+  return increases;
+}
+
+console.log(countWindowIncrease(importPuzzleInput(INPUT_FILE), 3)); // 1395?
+console.log(countWindowIncrease(importPuzzleInput("test-from-prompt.txt"), 3)); // 5
