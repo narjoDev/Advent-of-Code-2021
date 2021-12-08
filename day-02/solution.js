@@ -6,8 +6,6 @@ node: true,
 -W097 
 */
 
-// TODO: ONRAMP: add file reader function(s) to common library
-
 const fs = require("fs");
 
 function readTextFile(filename, encoding = "utf8") {
@@ -54,10 +52,10 @@ function tallyPosition(commands) {
   return [horizontal, depth];
 }
 
-function evaluateFile(filename) {
+function evaluateFile(filename, partTwo = false) {
   const lines = splitStringByLines(readTextFile(filename));
   const commands = lines.map((l) => parseCommand(l));
-  const positions = tallyPosition(commands);
+  const positions = !partTwo ? tallyPosition(commands) : tallyPartTwo(commands);
   const product = positions[0] * positions[1];
   console.log("Evaluated:", filename);
   console.log("Computed:", product);
@@ -66,3 +64,36 @@ function evaluateFile(filename) {
 
 evaluateFile("test-from-prompt.txt");
 evaluateFile("input.txt");
+
+// Part Two:
+// down X increases your aim by X units.
+// up X decreases your aim by X units.
+// forward X does two things:
+// It increases your horizontal position by X units.
+// It increases your depth by your aim multiplied by X.
+
+function tallyPartTwo(commands) {
+  let horizontal = 0;
+  let depth = 0;
+  let aim = 0;
+  commands.forEach((c) => {
+    const direction = c[0];
+    const units = parseInt(c[1]);
+    switch (direction) {
+      case "forward":
+        horizontal += units;
+        depth += aim * units;
+        break;
+      case "down":
+        aim += units;
+        break;
+      case "up":
+        aim -= units;
+        break;
+    }
+  });
+  return [horizontal, depth];
+}
+
+evaluateFile("test-from-prompt.txt", true);
+evaluateFile("input.txt", true);
