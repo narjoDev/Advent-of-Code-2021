@@ -1,7 +1,7 @@
 {
   "name": "advent-of-code-2021",
   "scripts": {
-    "test": "jest"
+    "test": "jest --watch"
   },
   "devDependencies": {
     "jest": "^27.4.5"
