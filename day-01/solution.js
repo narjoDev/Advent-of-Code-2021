@@ -12,24 +12,12 @@ count the number of times a depth measurement increases from the previous measur
 How many measurements are larger than the previous measurement?
 */
 
-const fs = require("fs");
+const {
+  readFile: readTextFile,
+  splitByLines: splitStringByLines,
+} = require("../libs/get-input");
 
 const INPUT_FILE = "input.txt";
-
-function readTextFile(fileName, encoding = "utf8") {
-  try {
-    const data = fs.readFileSync(fileName, encoding);
-    return data;
-  } catch (error) {
-    console.error(error);
-    return false;
-  }
-}
-
-function splitStringByLines(string) {
-  const lineEndPattern = /\r?\n/;
-  return string.split(lineEndPattern);
-}
 
 /**
  * Takes a file name and returns an array of numbers converted from the file's lines.
