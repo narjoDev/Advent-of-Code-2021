@@ -1,0 +1,3 @@
+Day 4
+Part One: 16674
+Part Two: 7075
