@@ -1,3 +1,3 @@
-<link to day>
+https://adventofcode.com/2021/day/<DAY>
 
 <puzzle instructions>
