@@ -2,4 +2,6 @@
 
 This repo hosts my solutions for [Advent of Code 2021](https://adventofcode.com/2021)
 
-I may also upload them to jsfiddle, in which case I will link them here.
+Solutions run via Node. Tests use the Jest framework.
+
+This project is licensed under the terms of the MIT license.
