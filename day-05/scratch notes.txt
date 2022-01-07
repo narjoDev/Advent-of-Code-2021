@@ -1,0 +1,30 @@
+8,0 -> 0,8
+length x = 0-8 = -8
+length y = 8-0 = 8
+
+if either length 0 then horiz or vert
+else
+x is neg
+y is pos
+length is 8
+
+for i=0 i <8
+markTileAt(8-i, 0+i)
+incrX = -1
+incrY = 1
+incrX = 0
+
+startX + incrX*i, startY + incrY*i
+
+const xToMark = isPos ? 8+1 : 8-1
+
+
+map[xToMark, yToMark]++
+if ^^^ exists
+[x,y] = += 1
+
+if ex, incr
+else set to 1
+
+if not ex set 0
+incr 1
