@@ -1,0 +1,3 @@
+Day 6
+Part One: 353274
+Part Two: 1609314870967
