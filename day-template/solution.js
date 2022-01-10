@@ -8,4 +8,9 @@ node: true,
 
 const { readFile, splitByLines } = require("../libs/get-input");
 
-module.exports = {};
+const FILES = {
+  example: "./day-<DAY>/example-input.txt",
+  input: "./day-<DAY>/puzzle-input.txt",
+};
+
+module.exports = { FILES };

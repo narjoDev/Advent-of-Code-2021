@@ -7,4 +7,10 @@ node: true,
 */
 
 const { test, expect, describe } = require("@jest/globals");
-// const {} = require("./solution");
+const { FILES } = require("./solution");
+
+describe("FOO", () => {
+  test("BAR", () => {
+    expect(true).toEqual(true);
+  });
+});
